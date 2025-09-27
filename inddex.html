@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Restaurant | Grill Specialties</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .menu-card {
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .price-tag {
+      background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-weight: 600;
+    }
+    
+    .nav-item {
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #f5576c, #f093fb);
+      border-radius: 3px;
+    }
+    
+    .add-btn {
+      background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(245, 87, 108, 0.3);
+    }
+    
+    .add-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(245, 87, 108, 0.4);
+    }
+    
+    .food-image {
+      height: 140px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .menu-card:hover .food-image {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Header avec titre et navigation -->
+    <header class="text-center mb-10">
+      <h1 class="title-font text-4xl font-bold text-gray-800 mb-2">Grill & Co</h1>
+      <p class="text-gray-600 mb-6">Specialties from the grill with the finest ingredients</p>
+      <h1 class="text-red-800  font-bold mb-6">Table {11}</h1>
+
+      
+      <div class="flex justify-between items-center bg-white rounded-2xl shadow-md p-4 mb-6">
+        <button class="text-gray-500 hover:text-red-500 text-xl p-2 rounded-full hover:bg-gray-100 transition-colors">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <nav class="flex space-x-2 md:space-x-6 text-sm font-medium overflow-x-auto py-2">
+          <a href="#" class="nav-item active text-red-500 font-semibold whitespace-nowrap">FROM THE GRILL</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">SALADS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">PASTA</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DESSERTS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+          <a href="#" class="nav-item text-gray-600 hover:text-red-500 whitespace-nowrap">DRINKS</a>
+        </nav>
+        
+        <button class="text-gray-500 hover:text-red-500 text-xl p-2 rounded-full hover:bg-gray-100 transition-colors">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu Items -->
+    <main class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Grilled Chicken Steak -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Grilled Chicken Steak" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Grilled Chicken Steak</h3>
+            <span class="price-tag text-sm">USD 15</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Grilled chicken steak with lemon, tomato, dill and bacon.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grilled Pork Ribs -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Grilled Pork Ribs" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Grilled Pork Ribs</h3>
+            <span class="price-tag text-sm">USD 25</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Shrimp port has grind over all the mixture sauce and vegetables.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grilled Lamb Chops -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Grilled Lamb Chops" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Grilled Lamb Chops</h3>
+            <span class="price-tag text-sm">USD 20</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Fender oven shoots a red wine olive mar mar grill oil in your mouth.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beef Steak -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Beef Steak" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Beef Steak</h3>
+            <span class="price-tag text-sm">USD 20</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Beef steak served with gritted vegetables and spices.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roasted Port Steak -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Roasted Port Steak" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Roasted Port Steak</h3>
+            <span class="price-tag text-sm">USD 18</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Dark waxed soft steak with special spices.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grilled Salmon -->
+      <div class="menu-card bg-white flex flex-col h-full">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Grilled Salmon" class="food-image w-full">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-semibold text-gray-800 text-lg">Grilled Salmon</h3>
+            <span class="price-tag text-sm">USD 22</span>
+          </div>
+          <p class="text-gray-600 text-sm flex-grow mb-4">
+            Grilled salmon is no one of the special sauce mix.
+          </p>
+          <div class="flex justify-between items-center mt-auto">
+            <div class="flex text-amber-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <button class="add-btn text-white w-8 h-8 flex items-center justify-center rounded-full text-lg">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+
+    <!-- Footer avec panier -->
+    <footer class="mt-10 bg-white rounded-2xl shadow-lg p-4">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-gray-600 text-sm">Total items: <span class="font-bold">0</span></p>
+          <p class="text-gray-800 font-bold text-lg">Total: USD <span>0.00</span></p>
+        </div>
+        <button class="bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">
+          View Cart <i class="fas fa-shopping-cart ml-2"></i>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Script pour gérer l'interactivité
+    document.addEventListener('DOMContentLoaded', function() {
+      // Navigation entre les catégories
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          navItems.forEach(i => i.classList.remove('active', 'text-red-500'));
+          navItems.forEach(i => i.classList.add('text-gray-600'));
+          this.classList.add('active', 'text-red-500');
+          this.classList.remove('text-gray-600');
+        });
+      });
+
+      // Scroll horizontal sur la navigation avec les chevrons
+      const navContainer = document.querySelector('nav');
+      const leftBtn = document.querySelector('.fa-chevron-left');
+      const rightBtn = document.querySelector('.fa-chevron-right');
+      if (leftBtn && leftBtn.parentElement && navContainer) {
+        leftBtn.parentElement.addEventListener('click', () => {
+          navContainer.scrollBy({ left: -150, behavior: 'smooth' });
+        });
+      }
+      if (rightBtn && rightBtn.parentElement && navContainer) {
+        rightBtn.parentElement.addEventListener('click', () => {
+          navContainer.scrollBy({ left: 150, behavior: 'smooth' });
+        });
+      }
+
+      // Ajouter des articles au panier
+      const addButtons = document.querySelectorAll('.add-btn');
+      const totalItems = document.querySelector('footer p span:first-child');
+      const totalPrice = document.querySelector('footer p span:last-child');
+      let itemsCount = 0;
+      let totalAmount = 0;
+
+      addButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const priceText = this.closest('.menu-card').querySelector('.price-tag').textContent;
+          const price = parseFloat(priceText.replace('USD ', ''));
+
+          itemsCount++;
+          totalAmount += price;
+
+          totalItems.textContent = itemsCount;
+          totalPrice.textContent = totalAmount.toFixed(2);
+
+          // Animation de feedback
+          this.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => {
+            this.innerHTML = '<i class="fas fa-plus"></i>';
+          }, 1000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
