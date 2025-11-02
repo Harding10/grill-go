@@ -1,16 +1,29 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src
+├── App.css                        # Styles globaux pour le composant App
+├── App.jsx                        # Composant racine de l'application (souvent contient les layouts ou routes)
+├── assets                         # Dossier contenant les ressources de l'application
+│   ├── api
+│   │   └── axiosClient.js         # Configuration Axios pour les appels API (baseURL, headers, etc.)
+│   ├── components                 # Composants réutilisables dans toute l'application
+│   │   ├── Footer.jsx             # Pied de page commun
+│   │   ├── Navbar.jsx             # Barre de navigation principale
+│   │   └──      
+│   ├── layouts                    # Gabarits de mise en page
+│   │   ├── DashboardLayout.jsx    # Layout pour les pages du tableau de bord (avec sidebar, header, etc.)
+│   │   └── PublicLayout.jsx       # Layout pour les pages publiques (landing, login, etc.)
+│   ├── pages                      # Pages principales de l'application
+│   │   ├── Auth                   # Pages liées à l'authentification
+│   │   │   ├── LoginPage.jsx      # Page de connexion
+│   │   │   └── RegisterPage.jsx   # Page d'inscription
+│   │   ├── Dashboard              # Pages internes du tableau de bord
+│   │   │   ├── Menus.jsx          # Page de gestion des menus (plats, catégories, etc.)
+│   │   │   ├── Orders.jsx         # Page de gestion des commandes
+│   │   │   ├── Settings.jsx       # Page de configuration du compte ou de l'app
+│   │   │   └── Tables.jsx         # Page de gestion des tables (restaurant)
+│   │   ├── LandingPage.jsx        # Page d'accueil publique
+│   │   └── MenuPage.jsx           # Page publique affichant les menus/plats
+│   ├── react.svg                  # Logo React (souvent utilisé dans la landing page)
+│   └── router
+│       └── index.jsx              # Fichier de configuration des routes avec React Router
+├── index.css                      # Fichier de styles globaux (souvent importé dans main.jsx)
+└── main.jsx                       # Point d'entrée de l'application, monte <App /> dans le DOM
