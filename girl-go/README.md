@@ -1,3 +1,5 @@
+
+```bash
 src
 ├── App.css                        # Styles globaux pour le composant App
 ├── App.jsx                        # Composant racine de l'application (souvent contient les layouts ou routes)
