@@ -29,3 +29,8 @@ src
 │       └── index.jsx              # Fichier de configuration des routes avec React Router
 ├── index.css                      # Fichier de styles globaux (souvent importé dans main.jsx)
 └── main.jsx                       # Point d'entrée de l'application, monte <App /> dans le DOM
+
+
+
+
+
